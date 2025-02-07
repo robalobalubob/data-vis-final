@@ -12,7 +12,6 @@ md`### Questions:
 function _layout(html, $0, $1, $2, $3) {
   return html`
     <style>
-      /* Container settings */
       #container {
         display: flex;
         flex-direction: column;
@@ -22,10 +21,9 @@ function _layout(html, $0, $1, $2, $3) {
         margin: 0 auto;
       }
 
-      /* Centering and styling for the controls section */
       #controls {
         display: flex;
-        justify-content: center;  /* centers items horizontally */
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 20px;
@@ -35,13 +33,11 @@ function _layout(html, $0, $1, $2, $3) {
         margin-bottom: 20px;
       }
 
-      /* Give each control its own little space and center its text */
       #controls > div {
         margin: 0 10px;
         text-align: center;
       }
 
-      /* Styling for the ownership container (if needed) */
       #selectedOwnershipContainer {
         display: flex;
         align-items: center;
@@ -54,7 +50,6 @@ function _layout(html, $0, $1, $2, $3) {
         margin: 0 5px;
       }
 
-      /* Content area for map and chart */
       #content {
         display: flex;
         flex-direction: row;
@@ -64,8 +59,7 @@ function _layout(html, $0, $1, $2, $3) {
         flex: 1;
         height: 100%;
       }
-
-      /* Optional: If your Observable inputs add a specific class, style them nicely */
+      
       .observablehq--input {
         border: 1px solid #ccc;
         border-radius: 4px;
