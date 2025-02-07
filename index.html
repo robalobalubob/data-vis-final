@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Project Workspace</title>
-<link rel="stylesheet" type="text/css" href="./inspector.css">
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Project Workspace</title>
+    <!-- If you have a local inspector.css, include it here -->
+    <link rel="stylesheet" type="text/css" href="./inspector.css">
+  </head>
 <script type="module">
 
 import define from "./index.js";
@@ -12,3 +15,4 @@ const runtime = new Runtime();
 const main = runtime.module(define, Inspector.into(document.body));
 
 </script>
+</html>
