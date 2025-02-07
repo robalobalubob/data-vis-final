@@ -9,65 +9,88 @@ md`### Questions:
 * How does cost vary between hospital ownership types?`
 )}
 
-function _layout(html,$0,$1,$2,$3){return(
-html`
-  <style>
-    #container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 800px;
-    }
-    #controls {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap; 
-      height: auto; 
-      padding: 10px;
-      box-sizing: border-box;
-      align-items: center;
-      background-color: #f9f9f9;
-      gap: 20px;
-    }
-    #controls > div {
-      margin-right: 20px;
-    }
-    #selectedOwnershipContainer {
-      display: flex;
-      align-items: center;
-    }
-    #selectedOwnershipContainer label {
-      margin-right: 5px;
-    }
-    #selectedOwnershipContainer input {
-      margin: 0 5px;
-    }
-    #content {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-    }
-    #map, #bar-chart {
-      flex: 1;
-      height: 99%;
-    }
-  </style>
-  <div id="container">
-    <div id="controls">
-      <div>${$0}</div>
-      <div>${$1}</div>
-      <div id="selectedOwnershipContainer">
-        ${$2}
-        ${$3}
+function _layout(html, $0, $1, $2, $3) {
+  return html`
+    <style>
+      /* Container settings */
+      #container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 800px;
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+      }
+
+      /* Centering and styling for the controls section */
+      #controls {
+        display: flex;
+        justify-content: center;  /* centers items horizontally */
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      /* Give each control its own little space and center its text */
+      #controls > div {
+        margin: 0 10px;
+        text-align: center;
+      }
+
+      /* Styling for the ownership container (if needed) */
+      #selectedOwnershipContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #selectedOwnershipContainer label {
+        margin-right: 5px;
+      }
+      #selectedOwnershipContainer input {
+        margin: 0 5px;
+      }
+
+      /* Content area for map and chart */
+      #content {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+      }
+      #map, #bar-chart {
+        flex: 1;
+        height: 100%;
+      }
+
+      /* Optional: If your Observable inputs add a specific class, style them nicely */
+      .observablehq--input {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+        background-color: #fff;
+      }
+    </style>
+
+    <div id="container">
+      <div id="controls">
+        <div>${$0}</div>
+        <div>${$1}</div>
+        <div id="selectedOwnershipContainer">
+          ${$2}
+          ${$3}
+        </div>
+      </div>
+      <div id="content">
+        <div id="map"></div>
+        <div id="bar-chart"></div>
       </div>
     </div>
-    <div id="content">
-      <div id="map"></div>
-      <div id="bar-chart"></div>
-    </div>
-  </div>
-`
-)}
+  `;
+}
+
 
 function _hospitals(d3){return(
 d3.csv("https://raw.githubusercontent.com/dakoop/il-hospital-report-card/refs/heads/main/hospitals.csv", d3.autoType)
