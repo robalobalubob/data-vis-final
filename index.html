@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Project Workspace</title>
-    
     <link rel="stylesheet" type="text/css" href="./inspector.css">
   </head>
   <body>
     <script type="module">
       
+      import { Inputs } from "https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.11.0/dist/inputs.min.js";
+      window.Inputs = Inputs;
+
       import define from "./index.js";
-      import { Runtime, Library, Inspector } from "./runtime.js";
+      
+      import { Runtime, Inspector } from "./runtime.js";
 
       const runtime = new Runtime();
-      
       runtime.module(define, Inspector.into(document.body));
     </script>
   </body>
