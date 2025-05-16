@@ -3,25 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Procedures Cost Analysis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Hospital Procedures Cost Analysis</title>    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" 
           integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
           crossorigin=""/>
-    <link rel="stylesheet" type="text/css" href="./inspector.css">
-  </head>
-  <body>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>  <body>
     <div class="header">
       <h1>Illinois Hospital Procedures Cost Analysis</h1>
       <p>An interactive visualization exploring how procedure costs vary across hospitals in Illinois</p>
     </div>
     
-    <div id="app-container"></div>
+    <div class="main-wrapper">
+      <div id="app-container"></div>
+    </div>
     
     <div class="footer">
       <p>Data source: Illinois Hospital Report Card | Created with Observable, D3.js, and Leaflet</p>
+      <p><a href="https://github.com/liberbell/data-vis-final" target="_blank">View on GitHub</a></p>
     </div>
-    
     <script type="module">
       import define from "./index.js";
       import { Runtime, Inspector } from "./runtime.js";

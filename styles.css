@@ -1,0 +1,364 @@
+/* Improved CSS for Hospital Data Visualization Project */
+/* Incorporating elements from portfolio styles and existing inspector.css */
+
+/* Base styles and resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #f5f5f5;
+  background: #181c20;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #ffb347;
+  font-weight: 700;
+}
+
+h2, h3, h4 {
+  color: #e0e0e0;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Layout container */
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #23272b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Controls section */
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #282e36;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 179, 71, 0.3);
+}
+
+#controls > div {
+  margin: 0 10px;
+  text-align: center;
+}
+
+/* Visualization content */
+#content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 20px;
+  min-height: 600px;
+}
+
+@media (max-width: 992px) {
+  #content {
+    flex-direction: column;
+  }
+}
+
+#map, #bar-chart {
+  flex: 1;
+  height: 600px;
+  min-width: 300px;
+  background-color: #23272b;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Form elements */
+select, input[type="radio"], input[type="checkbox"] {
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: #f5f5f5;
+  font-size: 0.9rem;
+}
+
+select {
+  min-width: 200px;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #e0e0e0;
+}
+
+button {
+  background-color: #ffb347;
+  color: #23272b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #ffc875;
+}
+
+/* Ownership filter styles */
+#selectedOwnershipContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  background-color: #282e36;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 179, 71, 0.2);
+}
+
+#selectedOwnershipContainer label {
+  margin-right: 5px;
+  color: #ffb347;
+}
+
+#selectedOwnershipContainer input {
+  margin: 0 5px;
+}
+
+/* Observable inputs styling */
+.observablehq--input {
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #333;
+  color: #f5f5f5;
+  transition: border-color 0.2s;
+}
+
+.observablehq--input:focus {
+  border-color: #ffb347;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.2);
+}
+
+/* Map legend styling */
+.info.legend {
+  padding: 10px;
+  background: #23272b;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 179, 71, 0.3);
+  color: #f5f5f5;
+}
+
+.info.legend strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffb347;
+}
+
+/* Custom tooltip for map markers */
+.custom-tooltip {
+  background-color: rgba(35, 39, 43, 0.9);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 1.4;
+  color: #f5f5f5;
+}
+
+.custom-tooltip strong {
+  color: #ffb347;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* SVG elements - Bar chart styling */
+.bar {
+  transition: opacity 0.2s, fill 0.2s;
+}
+
+.bar:hover {
+  opacity: 0.8;
+}
+
+text {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  fill: #e0e0e0;
+}
+
+.axis line,
+.axis path {
+  stroke: #555;
+}
+
+.axis text {
+  fill: #aaa;
+}
+
+/* Radio button and checkbox custom styling */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: #ffb347;
+}
+
+/* Page header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  background: #23272b;
+  border-bottom: 1px solid rgba(255, 179, 71, 0.3);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: #aaa;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 179, 71, 0.2);
+}
+
+/* Add link styling */
+a {
+  color: #ffb347;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+a:hover {
+  color: #ffc875;
+  text-decoration: underline;
+}
+
+/* Additional styles for better data visualization */
+.leaflet-container {
+  background-color: #333 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #23272b;
+  color: #f5f5f5;
+  border: 1px solid #ffb347;
+}
+
+.leaflet-popup-tip {
+  background-color: #ffb347;
+}
+
+/* Leaflet Map Dark Theme */
+.leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(0.9) hue-rotate(180deg) saturate(0.5) brightness(0.8);
+}
+
+.leaflet-control-zoom a {
+  background-color: #282e36 !important;
+  color: #f5f5f5 !important;
+  border-color: #444 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #333 !important;
+}
+
+/* Fix for scrollbar appearance */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181c20;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  #container {
+    padding: 10px;
+  }
+  
+  #controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  select {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Special styling for Observable cell elements */
+.observablehq {
+  color: #f5f5f5;
+}
+
+.observablehq select {
+  color: #f5f5f5;
+  background-color: #333;
+  border: 1px solid #555;
+}
+
+.observablehq--inspect {
+  color: #f5f5f5;
+  background: #282e36;
+}
+
+/* App-container specific styling */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#app-container {
+  width: 100%;
+  margin: 0 auto;
+}

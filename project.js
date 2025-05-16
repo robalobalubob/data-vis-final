@@ -11,69 +11,14 @@ md`### Questions:
 
 function _layout(html, $0, $1, $2, $3) {
   return html`
-    <style>
-      #container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 800px;
-        font-family: Arial, sans-serif;
-        margin: 0 auto;
-      }
-
-      #controls {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 15px;
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        margin-bottom: 20px;
-      }
-
-      #controls > div {
-        margin: 0 10px;
-        text-align: center;
-      }
-
-      #selectedOwnershipContainer {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      #selectedOwnershipContainer label {
-        margin-right: 5px;
-      }
-      #selectedOwnershipContainer input {
-        margin: 0 5px;
-      }
-
-      #content {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-      }
-      #map, #bar-chart {
-        flex: 1;
-        height: 100%;
-      }
-      
-      .observablehq--input {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 5px;
-        background-color: #fff;
-      }
-    </style>
-
     <div id="container">
       <div id="controls">
         <div>${$0}</div>
         <div>${$1}</div>
         <div id="selectedOwnershipContainer">
+          <label>Filter by Ownership:</label>
           ${$2}
+          <label>Filter by Service ID:</label>
           ${$3}
         </div>
       </div>
