@@ -39,12 +39,12 @@ p {
   flex-direction: column;
   width: 100%;
   max-width: 1200px;
-  min-height: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #23272b;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px; /* Add space between container and content below */
 }
 
 /* Controls section */
@@ -60,6 +60,8 @@ p {
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 179, 71, 0.3);
+  position: relative;
+  z-index: 10; /* Ensure controls stay on top */
 }
 
 #controls > div {
@@ -73,7 +75,7 @@ p {
   flex-direction: row;
   flex: 1;
   gap: 20px;
-  min-height: 600px;
+  margin-bottom: 30px; /* Extra space at the bottom */
 }
 
 @media (max-width: 992px) {
@@ -84,7 +86,7 @@ p {
 
 #map, #bar-chart {
   flex: 1;
-  height: 600px;
+  height: 500px; /* Adjusted height */
   min-width: 300px;
   background-color: #23272b;
   border-radius: 8px;
@@ -356,9 +358,22 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  margin-bottom: 100px; /* Add significant space for Observable content */
 }
 
 #app-container {
   width: 100%;
   margin: 0 auto;
+  position: relative;
+}
+
+/* Additional space for Observable outputs */
+.observablehq--cellOutline {
+  margin-top: 20px;
+}
+
+/* Observer notebook output clean-up */
+.observablehq--inspect {
+  margin-top: 50px; /* Space between visualization and debugger output */
 }
